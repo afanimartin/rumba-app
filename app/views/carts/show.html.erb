@@ -1,0 +1,25 @@
+
+  <% if current_user.cart.orders.size > 0 %>
+    <section class="cart">
+      <% current_user.cart.orders.each do |order| %>
+        <% product = Product.find(order.product_id) %>
+          <div class="order-content">
+            <div>
+              <h6><%= titleize_string(product.name) %></h6>
+              <h6><%= order.quantity %> x <%= format_money(product.price) %></h6>
+            </div>
+            <%= button_to order, method: :delete, data: { confirm: "Remove from cart?"} do %>
+              <i class="bi bi-x-lg"></i>
+            <% end %>
+            
+          </div>
+          <hr>
+      <% end %>
+      <h5><b>Total:</b> <%= format_money(cart_total) %>SSP</h5>
+    </section>
+    <section class="checkout-link">
+      <%= link_to "Checkout ↗", new_checkout_path, class: "btn btn-primary" %>
+    </section>
+  <% else %>
+    <h5 style="text-align: center">Please add items to cart.</h5>
+  <% end %>

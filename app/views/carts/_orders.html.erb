@@ -1,0 +1,4 @@
+<% orders.each do |order| %>
+  <% product = Product.find(order.product_id) %>
+  <%= product.name %>  
+<% end %>

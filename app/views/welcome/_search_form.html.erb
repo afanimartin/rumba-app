@@ -1,0 +1,6 @@
+<section id="search">
+  <%= form_with url: restaurants_path, method: :get do |form| %>
+    <%= form.select(:category_id, Category.all.collect{|c| [titleize_string(c.name), c.id]}, { include_blank: false }, class: "custom-select form-control") %>
+    <%= form.submit "Search", class: "btn btn-success" %>
+  <% end %>
+</section>

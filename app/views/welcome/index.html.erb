@@ -1,2 +1,7 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<section class="hero">
+  <section class="location-search">
+    <%= render "search_form" %>
+  </section>
+</section>
+
+<%= render "restaurants/restaurants", restaurants: @restaurants %>

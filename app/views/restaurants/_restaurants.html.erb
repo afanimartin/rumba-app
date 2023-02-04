@@ -1,0 +1,9 @@
+  <% if restaurants.size > 0 %>
+    <section class="restaurants">
+      <% restaurants.each do |restaurant| %>
+        <%= render "shared/card", restaurant: restaurant %>
+      <% end %>
+    </section>
+  <% else %>
+    <h4>No result</h4>
+  <% end %>

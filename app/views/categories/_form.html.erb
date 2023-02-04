@@ -1,0 +1,17 @@
+<section class="new-object-form">
+  <%= form_with model: category do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label "Category image", class: "form-label" %>
+      <%= form.file_field :image_url, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.submit class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</section>

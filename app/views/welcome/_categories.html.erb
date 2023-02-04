@@ -1,0 +1,6 @@
+<% categories.each do |category| %>
+  <section class="category-card">
+    <%= titleize_string(category.name) %>
+    <%= image_tag(category.image_url_url) %>
+  </section>
+<% end %>

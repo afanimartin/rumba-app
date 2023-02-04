@@ -1,0 +1,8 @@
+<div class="card" style="width: 100%;">
+  <%= image_tag restaurant.cover_image.url, class: "card-img-top" %>
+  <div class="card-body">
+    <h5 class="card-title"><%= capitalize_string(restaurant.name) %></h5>
+    <p class="card-text"><%= capitalize_string(restaurant.description) %></p>
+    <%= link_to "view menu ↗", restaurant_path(restaurant), class: "btn btn-success" %>
+  </div>
+</div>

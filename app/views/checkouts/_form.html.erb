@@ -1,0 +1,17 @@
+<section class="new-object-form">
+  <%= form_with model: checkout do |f| %>
+  <div class="mb-3">
+    <%= f.label :phone, class: "form-label" %>
+    <%= f.number_field :phone, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label "Delivery location", class: "form-label" %>
+    <%= f.select(:location_id, Location.all.collect { |l| [titleize_string(l.name), l.id] }, { include_blank: false }, class: "form-control") %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.submit "Complete ↗", class: "btn btn-primary" %>
+  </div>
+<% end %>
+</section>

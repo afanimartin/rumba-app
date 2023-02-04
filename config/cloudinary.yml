@@ -1,0 +1,9 @@
+development:
+ cloud_name: "dmyhendcr"
+ api_key:    "876512424456973"
+ api_secret: "RQnVho81SqEgGhZQDKjgTxyoZ08"
+
+production:
+ cloud_name: "dmyhendcr"
+ api_key:    "876512424456973"
+ api_secret: "RQnVho81SqEgGhZQDKjgTxyoZ08"

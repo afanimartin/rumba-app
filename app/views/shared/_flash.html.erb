@@ -1,0 +1,15 @@
+<section class="notice-alert">
+  <% if flash[:notice] %>
+      <div class="alert alert-info mt-4" role="alert">
+          <%= flash[:notice] %>
+      </div>
+  <% end %>
+</section>
+
+<section class="notice-alert">
+  <% if flash[:alert] %>
+      <div class="alert alert-warning mt-4" role="alert">
+          <%= flash[:alert] %>
+      </div>
+  <% end %>
+</section>

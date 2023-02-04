@@ -1,0 +1,22 @@
+<div class="card mb-3" style="margin: 100px auto;">
+  <div class="row g-0">
+    <div class="col-md-7">
+      <%= image_tag product.image_url, class: "img-fluid rounded-start" %>
+    </div>
+    <div class="col-md-5">
+      <div class="card-body">
+        <h3 class="card-title"><%= capitalize_string(product.name) %></h3>
+        <p class="card-text"><small class="text-muted"><%= capitalize_string(product.description) %></small></p>
+        <p class="card-text"><%= format_money(product.price) %>SSP</p>
+        <div id="<%= dom_id @product %>">
+          <%= form_with model: Order do |f| %>
+            <%= f.hidden_field :product_id, value: @product.id %>
+            <%= f.label :quantity, class: "form-label" %>
+            <%= f.number_field :quantity, value: 1, min: 1, class: "form-control" %><br>
+            <%= f.submit "Add to cart", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

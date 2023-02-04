@@ -1,0 +1,30 @@
+<section class="restaurant-hero" style="background-image: url('<%= @restaurant.cover_image_url %>'); background-position:center; background-repeat:no-repeat;background-size:cover;"></section>
+<section class="restaurant-content">
+  <h2><b><%= titleize_string(@restaurant.name) %></b></h2>
+  <p><%= @restaurant.description.capitalize %></p>
+  <small><i class="bi bi-telephone-fill"></i> <%= @restaurant.phone %></small><br>
+  <small><i class="bi bi-geo-alt-fill"></i> <%= titleize_string(@restaurant.address) %></small><br>
+  <br>
+</section>
+
+<section class="restaurant-title"><h4>Menu</h4></section>
+
+<% if @products.size > 0 %>
+  <section class="menu">
+    <% @products.each do |p| %>
+      <section class="menu-item">
+        <%= link_to controller: "products", action: "show", id: p.id do %>
+          <section class="menu-item zoom" style="background-image: linear-gradient(to bottom,rgba(95, 95, 95, 0.42),rgb(6, 13, 31)), url('<%= p.image_url %>'); background-position:center; background-repeat:no-repeat;background-size:cover;">
+          </section>
+          <br>
+          <h5><%= titleize_string(p.name) %></h5>
+          <%= format_money(p.price) %>SSP
+          <br>
+          <br>
+        <% end %>
+      </section>
+    <% end %>
+  </section>
+<% else %>
+  <section class="restaurant-title"><h6>No menu items at the moment.</h6></section>
+<% end %>

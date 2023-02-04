@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <%= image_tag "logo.jpg" %>
+    </a>
+    <div class="navbar-section">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <%= link_to cart_path(current_user.cart) do %>
+          <li class="nav-item">
+            <ul class="bs-icon">
+              <li><i class="bi bi-bag white"></i></li>
+              <li><span>Cart</span></li>
+              <li>(<%= current_user.cart.orders.count %>)</li>
+            </ul>
+          </li>
+        <% end %>
+        <div style="margin-left: 25px; font-size: 24px; color: #ed1d24"><i class="bi bi-box-arrow-right"></i><%= link_to "", destroy_user_session_path, method: :delete %></div>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile phone -->
+<nav class="mobile-nav navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <%= image_tag "logo.jpg" %>
+    </a>
+    <%= link_to cart_path(current_user.cart) do %>
+      <div class="bs-icon"><i class="bi bi-bag"></i>Cart<span>(<%= current_user.cart.orders.count %>)</span></div>
+    <% end %>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <div class="bs-icon-logout"><i class="bi bi-box-arrow-right"></i></div>
+    <% end %>
+  </div>
+</nav>

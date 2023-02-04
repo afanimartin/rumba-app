@@ -1,29 +1,32 @@
 source "https://rubygems.org"
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
 ruby "3.1.2"
-gem "rails", "~> 7.0.4", ">= 7.0.4.1"
+gem "rails", "~> 7.0.4"
 gem "sprockets-rails"
-gem "pg", "~> 1.1"
+gem "pg"
+gem "mysql2"
+gem "devise"
+gem "awesome_rails_console"
+gem "cloudinary", "~> 1.23"
+gem "carrierwave"
+gem "pg_search"
 gem "puma", "~> 5.0"
-gem "importmap-rails"
+gem 'mimemagic', '~> 0.3.10'
+gem "jsbundling-rails"
 gem "turbo-rails"
+gem "simple_form"
 gem "stimulus-rails"
+gem "cssbundling-rails"
 gem "jbuilder"
-gem "redis", "~> 4.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
-group :development, :test do
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+group :development, :test do  gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
-group :development do
-  gem "web-console"
+group :development do  gem "web-console"
 end
 
-group :test do
-  gem "capybara"
+group :test do  gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
 end
